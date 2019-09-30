@@ -80,7 +80,7 @@ return array (
     'passwordNote' => 'Employee will login using this password.',
     'jobTitle' => 'Job Title',
     'hourlyRate' => 'Hourly Rate',
-    'updateTitle' => 'update Employee Info',
+    'updateTitle' => 'update User Info',
     'updatePasswordNote' => 'Employee will login using this password. (Leave blank to keep current password)',
     'tasksDone' => 'Tasks Done',
     'hoursLogged' => 'Hours Logged',
