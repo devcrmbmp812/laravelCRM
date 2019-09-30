@@ -58,17 +58,17 @@
                         <div class="form-group">
                             <a href="{{ route('admin.employees.create') }}" class="btn btn-outline btn-success btn-sm">@lang('modules.employees.addNewEmployee') <i class="fa fa-plus" aria-hidden="true"></i></a>
 
-                            <a href="javascript:;" id="toggle-filter" class="btn btn-outline btn-danger btn-sm toggle-filter"><i class="fa fa-sliders"></i> @lang('app.filterResults')</a>
+                            {{--<a href="javascript:;" id="toggle-filter" class="btn btn-outline btn-danger btn-sm toggle-filter"><i class="fa fa-sliders"></i> @lang('app.filterResults')</a>--}}
 
                             {{--<a href="{{ route('admin.employees.freeEmployees') }}" class="btn btn-outline btn-info btn-sm text-capitalize" >@lang('modules.dashboard.freeEmployees')</a>--}}
                         </div>
                     </div>
 
-                    <div class="col-sm-6 text-right hidden-xs">
-                        <div class="form-group">
-                            <a href="javascript:;" onclick="exportData()"  class="btn btn-info btn-sm"><i class="ti-export" aria-hidden="true"></i> @lang('app.exportExcel')</a>
-                        </div>
-                    </div>
+                    {{--<div class="col-sm-6 text-right hidden-xs">--}}
+                        {{--<div class="form-group">--}}
+                            {{--<a href="javascript:;" onclick="exportData()"  class="btn btn-info btn-sm"><i class="ti-export" aria-hidden="true"></i> @lang('app.exportExcel')</a>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
 
                 </div>
                 <div class="row b-b b-t" style="display: none; background: #fbfbfb;" id="ticket-filters">
