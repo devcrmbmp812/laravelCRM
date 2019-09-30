@@ -64,7 +64,7 @@ return array (
   array (
     'home' => 'Home',
     'dashboard' => 'Dashboard',
-    'clients' => 'Clients',
+    'clients' => 'Client List',
     'projects' => 'Projects',
     'taskCalendar' => 'Task Calendar',
     'messages' => 'Messages',
@@ -92,7 +92,6 @@ return array (
     'timeLogs' => 'Time Logs',
     'tasks' => 'Tasks',
     'attendance' => 'Attendance',
-    'clients' => 'Clients',
     'employees' => 'Users',
     'estimates' => 'Estimates',
     'expenses' => 'Expenses',

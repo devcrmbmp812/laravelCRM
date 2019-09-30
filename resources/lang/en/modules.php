@@ -4,7 +4,7 @@ return array (
   'dashboard' => 
   array (
     'totalClients' => 'Total Clients',
-    'totalEmployees' => 'Total Employees',
+    'totalEmployees' => 'Total Users',
     'totalProjects' => 'Total Projects',
     'totalPaidInvoices' => 'Paid Invoices',
     'totalHoursLogged' => 'Hours Logged',
@@ -71,10 +71,10 @@ return array (
   ),
   'employees' => 
   array (
-    'addNewEmployee' => 'Add New Employee',
-    'createTitle' => 'Add Employee Info',
-    'employeeName' => 'Employee Name',
-    'employeeEmail' => 'Employee Email',
+    'addNewEmployee' => 'Add New User',
+    'createTitle' => 'Add User Info',
+    'employeeName' => 'User Name',
+    'employeeEmail' => 'User Email',
     'emailNote' => 'Employee will login using this email.',
     'employeePassword' => 'Password',
     'passwordNote' => 'Employee will login using this password.',
