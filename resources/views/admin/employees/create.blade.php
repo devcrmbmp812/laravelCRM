@@ -95,17 +95,17 @@
 
                             <div class="row">
 
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="control-label"><i
-                                                    class="fa fa-slack"></i> @lang('modules.employees.slackUsername')
-                                        </label>
-                                        <div class="input-group"><span class="input-group-addon">@</span>
-                                            <input autocomplete="nope" type="text" id="slack_username"
-                                                   name="slack_username" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
+                                {{--<div class="col-md-3">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label class="control-label"><i--}}
+                                                    {{--class="fa fa-slack"></i> @lang('modules.employees.slackUsername')--}}
+                                        {{--</label>--}}
+                                        {{--<div class="input-group"><span class="input-group-addon">@</span>--}}
+                                            {{--<input autocomplete="nope" type="text" id="slack_username"--}}
+                                                   {{--name="slack_username" class="form-control">--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 <!--/span-->
 
                                 <div class="col-md-3">
@@ -117,13 +117,13 @@
                                 </div>
                                 <!--/span-->
 
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>@lang('modules.employees.lastDate')</label>
-                                        <input type="text" autocomplete="off" name="last_date" id="end_date"
-                                               class="form-control">
-                                    </div>
-                                </div>
+                                {{--<div class="col-md-3">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label>@lang('modules.employees.lastDate')</label>--}}
+                                        {{--<input type="text" autocomplete="off" name="last_date" id="end_date"--}}
+                                               {{--class="form-control">--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
 
                                 <div class="col-md-3">
                                     <div class="form-group">
