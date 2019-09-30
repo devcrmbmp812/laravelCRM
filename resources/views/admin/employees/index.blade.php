@@ -41,15 +41,15 @@
             </div>
         </div>
 
-        <div class="col-md-3">
-            <div class="white-box bg-danger">
-                <h3 class="box-title text-white">@lang('modules.dashboard.freeEmployees')</h3>
-                <ul class="list-inline two-part">
-                    <li><i class="icon-user text-white"></i></li>
-                    <li class="text-right"><span id="totalWorkingDays" class="counter text-white">{{ $freeEmployees }}</span></li>
-                </ul>
-            </div>
-        </div>
+        {{--<div class="col-md-3">--}}
+            {{--<div class="white-box bg-danger">--}}
+                {{--<h3 class="box-title text-white">@lang('modules.dashboard.freeEmployees')</h3>--}}
+                {{--<ul class="list-inline two-part">--}}
+                    {{--<li><i class="icon-user text-white"></i></li>--}}
+                    {{--<li class="text-right"><span id="totalWorkingDays" class="counter text-white">{{ $freeEmployees }}</span></li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
         <div class="col-md-12">
             <div class="white-box">
@@ -60,7 +60,7 @@
 
                             <a href="javascript:;" id="toggle-filter" class="btn btn-outline btn-danger btn-sm toggle-filter"><i class="fa fa-sliders"></i> @lang('app.filterResults')</a>
 
-                            <a href="{{ route('admin.employees.freeEmployees') }}" class="btn btn-outline btn-info btn-sm text-capitalize" >@lang('modules.dashboard.freeEmployees')</a>
+                            {{--<a href="{{ route('admin.employees.freeEmployees') }}" class="btn btn-outline btn-info btn-sm text-capitalize" >@lang('modules.dashboard.freeEmployees')</a>--}}
                         </div>
                     </div>
 
