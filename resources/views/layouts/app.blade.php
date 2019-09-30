@@ -357,156 +357,156 @@
             <ul class="nav navbar-top-links navbar-left hidden-xs">
                 <li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i
                                 class="icon-arrow-left-circle ti-menu"></i></a></li>
-                <li>
-                    <form role="search" action="{{ route('admin.search.store') }}" novalidate method="POST"
-                          class="app-search hidden-xs">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <input type="text" name="search_key" value="{{ $searchKey ?? '' }}" autocomplete="off" required
-                               placeholder="@lang('app.search')" class="form-control">
-                        <a href="javascript:;" class="submit-search"><i class="fa fa-search"></i></a>
-                    </form>
-                </li>
-                <!-- .Task dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle waves-effect waves-light text-uppercase" data-toggle="dropdown" href="#">
-                        @lang('app.add') <i class="ti-plus"></i>
-                    </a>
-                    <ul class="dropdown-menu mailbox">
+                {{--<li>--}}
+                    {{--<form role="search" action="{{ route('admin.search.store') }}" novalidate method="POST"--}}
+                          {{--class="app-search hidden-xs">--}}
+                        {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
+                        {{--<input type="text" name="search_key" value="{{ $searchKey ?? '' }}" autocomplete="off" required--}}
+                               {{--placeholder="@lang('app.search')" class="form-control">--}}
+                        {{--<a href="javascript:;" class="submit-search"><i class="fa fa-search"></i></a>--}}
+                    {{--</form>--}}
+                {{--</li>--}}
+                {{--<!-- .Task dropdown -->--}}
+                {{--<li class="dropdown">--}}
+                    {{--<a class="dropdown-toggle waves-effect waves-light text-uppercase" data-toggle="dropdown" href="#">--}}
+                        {{--@lang('app.add') <i class="ti-plus"></i>--}}
+                    {{--</a>--}}
+                    {{--<ul class="dropdown-menu mailbox">--}}
 
-                        @if(in_array('projects',$modules))
-                        <li class="top-notifications">
-                            <div class="message-center">
-                                <a href="{{ route('admin.projects.create') }}">
-                                    <div class="mail-contnet">
-                                        <span class="mail-desc m-0">@lang('app.add') @lang('app.project')</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        @endif
+                        {{--@if(in_array('projects',$modules))--}}
+                        {{--<li class="top-notifications">--}}
+                            {{--<div class="message-center">--}}
+                                {{--<a href="{{ route('admin.projects.create') }}">--}}
+                                    {{--<div class="mail-contnet">--}}
+                                        {{--<span class="mail-desc m-0">@lang('app.add') @lang('app.project')</span>--}}
+                                    {{--</div>--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
+                        {{--</li>--}}
+                        {{--@endif--}}
 
-                        @if(in_array('tasks',$modules))
-                        <li class="top-notifications">
-                            <div class="message-center">
-                                <a href="{{ route('admin.all-tasks.create') }}">
-                                    <div class="mail-contnet">
-                                        <span class="mail-desc m-0">@lang('app.add') @lang('app.task')</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        @endif
+                        {{--@if(in_array('tasks',$modules))--}}
+                        {{--<li class="top-notifications">--}}
+                            {{--<div class="message-center">--}}
+                                {{--<a href="{{ route('admin.all-tasks.create') }}">--}}
+                                    {{--<div class="mail-contnet">--}}
+                                        {{--<span class="mail-desc m-0">@lang('app.add') @lang('app.task')</span>--}}
+                                    {{--</div>--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
+                        {{--</li>--}}
+                        {{--@endif--}}
 
-                        @if(in_array('clients',$modules))
-                        <li class="top-notifications">
-                            <div class="message-center">
-                                <a href="{{ route('admin.clients.create') }}">
-                                    <div class="mail-contnet">
-                                        <span class="mail-desc m-0">@lang('app.add') @lang('app.client')</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        @endif
+                        {{--@if(in_array('clients',$modules))--}}
+                        {{--<li class="top-notifications">--}}
+                            {{--<div class="message-center">--}}
+                                {{--<a href="{{ route('admin.clients.create') }}">--}}
+                                    {{--<div class="mail-contnet">--}}
+                                        {{--<span class="mail-desc m-0">@lang('app.add') @lang('app.client')</span>--}}
+                                    {{--</div>--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
+                        {{--</li>--}}
+                        {{--@endif--}}
 
-                        @if(in_array('employees',$modules))
-                        <li class="top-notifications">
-                            <div class="message-center">
-                                <a href="{{ route('admin.employees.create') }}">
-                                    <div class="mail-contnet">
-                                        <span class="mail-desc m-0">@lang('app.add') @lang('app.employee')</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        @endif
+                        {{--@if(in_array('employees',$modules))--}}
+                        {{--<li class="top-notifications">--}}
+                            {{--<div class="message-center">--}}
+                                {{--<a href="{{ route('admin.employees.create') }}">--}}
+                                    {{--<div class="mail-contnet">--}}
+                                        {{--<span class="mail-desc m-0">@lang('app.add') @lang('app.employee')</span>--}}
+                                    {{--</div>--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
+                        {{--</li>--}}
+                        {{--@endif--}}
 
-                        @if(in_array('payments',$modules))
-                        <li class="top-notifications">
-                            <div class="message-center">
-                                <a href="{{ route('admin.payments.create') }}">
-                                    <div class="mail-contnet">
-                                        <span class="mail-desc m-0">@lang('modules.payments.addPayment')</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        @endif
+                        {{--@if(in_array('payments',$modules))--}}
+                        {{--<li class="top-notifications">--}}
+                            {{--<div class="message-center">--}}
+                                {{--<a href="{{ route('admin.payments.create') }}">--}}
+                                    {{--<div class="mail-contnet">--}}
+                                        {{--<span class="mail-desc m-0">@lang('modules.payments.addPayment')</span>--}}
+                                    {{--</div>--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
+                        {{--</li>--}}
+                        {{--@endif--}}
 
-                        @if(in_array('tickets',$modules))
-                        <li class="top-notifications">
-                            <div class="message-center">
-                                <a href="{{ route('admin.tickets.create') }}">
-                                    <div class="mail-contnet">
-                                        <span class="mail-desc m-0">@lang('app.add') @lang('modules.tickets.ticket')</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        @endif
+                        {{--@if(in_array('tickets',$modules))--}}
+                        {{--<li class="top-notifications">--}}
+                            {{--<div class="message-center">--}}
+                                {{--<a href="{{ route('admin.tickets.create') }}">--}}
+                                    {{--<div class="mail-contnet">--}}
+                                        {{--<span class="mail-desc m-0">@lang('app.add') @lang('modules.tickets.ticket')</span>--}}
+                                    {{--</div>--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
+                        {{--</li>--}}
+                        {{--@endif--}}
 
-                    </ul>
-                </li>
+                    {{--</ul>--}}
+                {{--</li>--}}
                 <!-- /.Task dropdown -->
             </ul>
             <!-- This is the message dropdown -->
             <ul class="nav navbar-top-links navbar-right pull-right">
 
 
-                @if(isset($tutorialUrl))
-                <li class="dropdown">
-                    <a class="popup-youtube" href="{{ $tutorialUrl}}"><i class="icon-control-play text-danger"></i> @lang('app.watchTutorial')</a>
-                </li>
-                @endif
+                {{--@if(isset($tutorialUrl))--}}
+                {{--<li class="dropdown">--}}
+                    {{--<a class="popup-youtube" href="{{ $tutorialUrl}}"><i class="icon-control-play text-danger"></i> @lang('app.watchTutorial')</a>--}}
+                {{--</li>--}}
+                {{--@endif--}}
 
-                @if(isset($activeTimerCount))
-                <li class="dropdown hidden-xs">
-                <span id="timer-section">
-                    <div class="nav navbar-top-links navbar-right pull-right m-t-10">
-                        <a class="btn btn-rounded btn-default timer-modal" href="javascript:;">@lang("modules.projects.activeTimers") 
-                            <span class="label label-danger" id="activeCurrentTimerCount">@if($activeTimerCount > 0) {{ $activeTimerCount }} @else 0 @endif</span>
-                        </a>
-                    </div>
-                </span>
-                </li>
-                @endif
+                {{--@if(isset($activeTimerCount))--}}
+                {{--<li class="dropdown hidden-xs">--}}
+                {{--<span id="timer-section">--}}
+                    {{--<div class="nav navbar-top-links navbar-right pull-right m-t-10">--}}
+                        {{--<a class="btn btn-rounded btn-default timer-modal" href="javascript:;">@lang("modules.projects.activeTimers")--}}
+                            {{--<span class="label label-danger" id="activeCurrentTimerCount">@if($activeTimerCount > 0) {{ $activeTimerCount }} @else 0 @endif</span>--}}
+                        {{--</a>--}}
+                    {{--</div>--}}
+                {{--</span>--}}
+                {{--</li>--}}
+                {{--@endif--}}
 
 
-                <li class="dropdown">
-                    <select class="selectpicker language-switcher" data-width="fit">
-                        <option value="en" @if($global->locale == "en") selected @endif data-content='<span class="flag-icon flag-icon-us"></span> En'>En</option>
-                        @foreach($languageSettings as $language)
-                            <option value="{{ $language->language_code }}" @if($global->locale == $language->language_code) selected @endif  data-content='<span class="flag-icon flag-icon-{{ $language->language_code }}"></span> {{ $language->language_code }}'>{{ $language->language_code }}</option>
-                        @endforeach
-                    </select>
-                </li>
+                {{--<li class="dropdown">--}}
+                    {{--<select class="selectpicker language-switcher" data-width="fit">--}}
+                        {{--<option value="en" @if($global->locale == "en") selected @endif data-content='<span class="flag-icon flag-icon-us"></span> En'>En</option>--}}
+                        {{--@foreach($languageSettings as $language)--}}
+                            {{--<option value="{{ $language->language_code }}" @if($global->locale == $language->language_code) selected @endif  data-content='<span class="flag-icon flag-icon-{{ $language->language_code }}"></span> {{ $language->language_code }}'>{{ $language->language_code }}</option>--}}
+                        {{--@endforeach--}}
+                    {{--</select>--}}
+                {{--</li>--}}
 
                 <!-- .Task dropdown -->
-                <li class="dropdown" id="top-notification-dropdown">
-                    <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#">
-                        <i class="icon-bell"></i>
-                        @if(count($user->unreadNotifications) > 0)
-                            <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
-                        @endif
-                    </a>
-                    <ul class="dropdown-menu  dropdown-menu-right mailbox animated slideInDown">
-                        <li>
-                            <div class="drop-title">@lang('app.newNotifications') <span
-                                        id="top-notification-count">{{ count($user->unreadNotifications) }}</span>
-                            </div>
-                        </li>
-                        @foreach ($user->unreadNotifications as $notification)
-                            @include('notifications.member.'.snake_case(class_basename($notification->type)))
-                        @endforeach
+                {{--<li class="dropdown" id="top-notification-dropdown">--}}
+                    {{--<a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#">--}}
+                        {{--<i class="icon-bell"></i>--}}
+                        {{--@if(count($user->unreadNotifications) > 0)--}}
+                            {{--<div class="notify"><span class="heartbit"></span><span class="point"></span></div>--}}
+                        {{--@endif--}}
+                    {{--</a>--}}
+                    {{--<ul class="dropdown-menu  dropdown-menu-right mailbox animated slideInDown">--}}
+                        {{--<li>--}}
+                            {{--<div class="drop-title">@lang('app.newNotifications') <span--}}
+                                        {{--id="top-notification-count">{{ count($user->unreadNotifications) }}</span>--}}
+                            {{--</div>--}}
+                        {{--</li>--}}
+                        {{--@foreach ($user->unreadNotifications as $notification)--}}
+                            {{--@include('notifications.member.'.snake_case(class_basename($notification->type)))--}}
+                        {{--@endforeach--}}
 
-                        @if(count($user->unreadNotifications) > 0)
-                            <li>
-                                <a class="text-center" id="mark-notification-read"
-                                   href="javascript:;"> @lang('app.markRead') <i class="fa fa-check"></i> </a>
-                            </li>
-                        @endif
-                    </ul>
-                </li>
+                        {{--@if(count($user->unreadNotifications) > 0)--}}
+                            {{--<li>--}}
+                                {{--<a class="text-center" id="mark-notification-read"--}}
+                                   {{--href="javascript:;"> @lang('app.markRead') <i class="fa fa-check"></i> </a>--}}
+                            {{--</li>--}}
+                        {{--@endif--}}
+                    {{--</ul>--}}
+                {{--</li>--}}
                 <!-- /.Task dropdown -->
 
 
@@ -517,7 +517,7 @@
                     </a>
                 </li>
 
-                
+
 
             </ul>
             
