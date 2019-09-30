@@ -321,44 +321,44 @@
             <ul class="nav navbar-top-links navbar-right pull-right">
 
                 <li class="dropdown">
-                    <select class="selectpicker language-switcher" data-width="fit">
-                        <option value="en" @if($user->locale == "en") selected
-                                @endif data-content='<span class="flag-icon flag-icon-us"></span> En'>En
-                        </option>
-                        @foreach($languageSettings as $language)
-                            <option value="{{ $language->language_code }}"
-                                    @if($user->locale == $language->language_code) selected
-                                    @endif  data-content='<span class="flag-icon flag-icon-{{ $language->language_code }}"></span> {{ $language->language_code }}'>{{ $language->language_code }}</option>
-                        @endforeach
-                    </select>
+                    {{--<select class="selectpicker language-switcher" data-width="fit">--}}
+                        {{--<option value="en" @if($user->locale == "en") selected--}}
+                                {{--@endif data-content='<span class="flag-icon flag-icon-us"></span> En'>En--}}
+                        {{--</option>--}}
+                        {{--@foreach($languageSettings as $language)--}}
+                            {{--<option value="{{ $language->language_code }}"--}}
+                                    {{--@if($user->locale == $language->language_code) selected--}}
+                                    {{--@endif  data-content='<span class="flag-icon flag-icon-{{ $language->language_code }}"></span> {{ $language->language_code }}'>{{ $language->language_code }}</option>--}}
+                        {{--@endforeach--}}
+                    {{--</select>--}}
                 </li>
 
                 <!-- .Task dropdown -->
-                <li class="dropdown" id="top-notification-dropdown">
-                    <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#">
-                        <i class="icon-bell"></i>
-                        @if(count($user->unreadNotifications) > 0)
-                            <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
-                        @endif
-                    </a>
-                    <ul class="dropdown-menu  dropdown-menu-right mailbox animated slideInDown">
-                        <li>
-                            <div class="drop-title">@lang('app.newNotifications') <span
-                                        id="top-notification-count">{{ count($user->unreadNotifications) }}</span>
-                            </div>
-                        </li>
-                        @foreach ($user->unreadNotifications as $notification)
-                            @include('notifications.client.'.snake_case(class_basename($notification->type)))
-                        @endforeach
+                {{--<li class="dropdown" id="top-notification-dropdown">--}}
+                    {{--<a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#">--}}
+                        {{--<i class="icon-bell"></i>--}}
+                        {{--@if(count($user->unreadNotifications) > 0)--}}
+                            {{--<div class="notify"><span class="heartbit"></span><span class="point"></span></div>--}}
+                        {{--@endif--}}
+                    {{--</a>--}}
+                    {{--<ul class="dropdown-menu  dropdown-menu-right mailbox animated slideInDown">--}}
+                        {{--<li>--}}
+                            {{--<div class="drop-title">@lang('app.newNotifications') <span--}}
+                                        {{--id="top-notification-count">{{ count($user->unreadNotifications) }}</span>--}}
+                            {{--</div>--}}
+                        {{--</li>--}}
+                        {{--@foreach ($user->unreadNotifications as $notification)--}}
+                            {{--@include('notifications.client.'.snake_case(class_basename($notification->type)))--}}
+                        {{--@endforeach--}}
 
-                        @if(count($user->unreadNotifications) > 0)
-                            <li>
-                                <a class="text-center" id="mark-notification-read"
-                                   href="javascript:;"> @lang('app.markRead') <i class="fa fa-check"></i> </a>
-                            </li>
-                        @endif
-                    </ul>
-                </li>
+                        {{--@if(count($user->unreadNotifications) > 0)--}}
+                            {{--<li>--}}
+                                {{--<a class="text-center" id="mark-notification-read"--}}
+                                   {{--href="javascript:;"> @lang('app.markRead') <i class="fa fa-check"></i> </a>--}}
+                            {{--</li>--}}
+                        {{--@endif--}}
+                    {{--</ul>--}}
+                {{--</li>--}}
                 <!-- /.Task dropdown -->
                 </li>
                 <!-- /.dropdown -->

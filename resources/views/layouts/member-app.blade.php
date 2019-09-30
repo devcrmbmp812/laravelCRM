@@ -288,30 +288,30 @@
             <ul class="nav navbar-top-links navbar-right pull-right">
 
                 <!-- .Task dropdown -->
-                <li class="dropdown" id="top-notification-dropdown">
-                    <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#">
-                        <i class="icon-bell"></i>
-                        @if(count($user->unreadNotifications) > 0)
-                            <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
-                        @endif
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-right mailbox animated slideInDown">
-                        <li>
-                            <div class="drop-title">@lang('app.newNotifications') <span
-                                        id="top-notification-count">{{ count($user->unreadNotifications) }}</span>
-                            </div>
-                        </li>
-                        @foreach ($user->unreadNotifications as $notification)
-                            @include('notifications.member.'.snake_case(class_basename($notification->type)))
-                        @endforeach
+                {{--<li class="dropdown" id="top-notification-dropdown">--}}
+                    {{--<a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#">--}}
+                        {{--<i class="icon-bell"></i>--}}
+                        {{--@if(count($user->unreadNotifications) > 0)--}}
+                            {{--<div class="notify"><span class="heartbit"></span><span class="point"></span></div>--}}
+                        {{--@endif--}}
+                    {{--</a>--}}
+                    {{--<ul class="dropdown-menu dropdown-menu-right mailbox animated slideInDown">--}}
+                        {{--<li>--}}
+                            {{--<div class="drop-title">@lang('app.newNotifications') <span--}}
+                                        {{--id="top-notification-count">{{ count($user->unreadNotifications) }}</span>--}}
+                            {{--</div>--}}
+                        {{--</li>--}}
+                        {{--@foreach ($user->unreadNotifications as $notification)--}}
+                            {{--@include('notifications.member.'.snake_case(class_basename($notification->type)))--}}
+                        {{--@endforeach--}}
 
-                        @if(count($user->unreadNotifications) > 0)
-                            <li>
-                                        <a class="text-center" id="mark-notification-read" href="javascript:;"> @lang('app.markRead') <i class="fa fa-check"></i> </a>
-                            </li>
-                        @endif
-                    </ul>
-                </li>
+                        {{--@if(count($user->unreadNotifications) > 0)--}}
+                            {{--<li>--}}
+                                        {{--<a class="text-center" id="mark-notification-read" href="javascript:;"> @lang('app.markRead') <i class="fa fa-check"></i> </a>--}}
+                            {{--</li>--}}
+                        {{--@endif--}}
+                    {{--</ul>--}}
+                {{--</li>--}}
                 <!-- /.Task dropdown -->
                 </li>
                 <!-- /.dropdown -->
@@ -324,29 +324,29 @@
                 </li>
             </ul>
 
-            <span id="timer-section">
-                @if(!is_null($timer))
-                    <div class="nav navbar-top-links navbar-right pull-right m-t-10">
-                        <a class="btn btn-rounded btn-default stop-timer-modal" href="javascript:;" data-timer-id="{{ $timer->id }}">
-                            <i class="ti-alarm-clock"></i>
-                            <span id="active-timer">{{ $timer->timer }}</span>
-                            <label class="label label-danger">@lang("app.stop")</label></a>
-                    </div>
-                @else
-                    <div class="nav navbar-top-links navbar-right pull-right m-t-10">
-                        <a class="btn btn-rounded btn-default timer-modal" href="javascript:;">@lang("modules.timeLogs.startTimer") <i class="fa fa-check-circle text-success"></i></a>
-                    </div>
-                @endif
-            </span>
-            @if(isset($activeTimerCount) && $user->can('view_timelogs'))
-            <span id="timer-section">
-                <div class="nav navbar-top-links navbar-right m-t-10 m-r-10">
-                    <a class="btn btn-rounded btn-default active-timer-modal" href="javascript:;">@lang("modules.projects.activeTimers")
-                        <span class="label label-danger" id="activeCurrentTimerCount">@if($activeTimerCount > 0) {{ $activeTimerCount }} @else 0 @endif</span>
-                    </a>
-                </div>
-            </span>
-            @endif
+            {{--<span id="timer-section">--}}
+                {{--@if(!is_null($timer))--}}
+                    {{--<div class="nav navbar-top-links navbar-right pull-right m-t-10">--}}
+                        {{--<a class="btn btn-rounded btn-default stop-timer-modal" href="javascript:;" data-timer-id="{{ $timer->id }}">--}}
+                            {{--<i class="ti-alarm-clock"></i>--}}
+                            {{--<span id="active-timer">{{ $timer->timer }}</span>--}}
+                            {{--<label class="label label-danger">@lang("app.stop")</label></a>--}}
+                    {{--</div>--}}
+                {{--@else--}}
+                    {{--<div class="nav navbar-top-links navbar-right pull-right m-t-10">--}}
+                        {{--<a class="btn btn-rounded btn-default timer-modal" href="javascript:;">@lang("modules.timeLogs.startTimer") <i class="fa fa-check-circle text-success"></i></a>--}}
+                    {{--</div>--}}
+                {{--@endif--}}
+            {{--</span>--}}
+            {{--@if(isset($activeTimerCount) && $user->can('view_timelogs'))--}}
+            {{--<span id="timer-section">--}}
+                {{--<div class="nav navbar-top-links navbar-right m-t-10 m-r-10">--}}
+                    {{--<a class="btn btn-rounded btn-default active-timer-modal" href="javascript:;">@lang("modules.projects.activeTimers")--}}
+                        {{--<span class="label label-danger" id="activeCurrentTimerCount">@if($activeTimerCount > 0) {{ $activeTimerCount }} @else 0 @endif</span>--}}
+                    {{--</a>--}}
+                {{--</div>--}}
+            {{--</span>--}}
+            {{--@endif--}}
 
         </div>
         <!-- /.navbar-header -->
