@@ -90,14 +90,14 @@
                             </div>
                             <!--/row-->
                             <!--row gst number-->
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="gst_number">@lang('app.gstNumber')</label>
-                                        <input type="text" id="gst_number" name="gst_number" class="form-control" value="{{ $clientDetail->gst_number ?? '' }}">
-                                    </div>
-                                </div>
-                            </div>
+                            {{--<div class="row">--}}
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label for="gst_number">@lang('app.gstNumber')</label>--}}
+                                        {{--<input type="text" id="gst_number" name="gst_number" class="form-control" value="{{ $clientDetail->gst_number ?? '' }}">--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                             <!--/row-->
                             <div class="row">
                                 <div class="col-md-6">
