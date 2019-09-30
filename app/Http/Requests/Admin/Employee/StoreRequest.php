@@ -31,8 +31,8 @@ class StoreRequest extends CoreRequest
             'slack_username' => 'nullable|unique:employee_details,slack_username',
             'hourly_rate' => 'nullable|numeric',
             'joining_date' => 'required',
-            'department' => 'required',
-            'designation' => 'required',
+            'department' => 'nullable',
+            'designation' => 'nullable',
         ];
     }
 }

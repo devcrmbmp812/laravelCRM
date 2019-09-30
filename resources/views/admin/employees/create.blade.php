@@ -149,50 +149,50 @@
 
                             </div>
                             <!--/span-->
-                            <div class="row">
-                                <div class="col-md-12 ">
-                                    <div class="form-group">
-                                        <label>@lang('app.skills')</label>
-                                        <input name='tags' placeholder='@lang('app.skills')' value=''>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 ">
-                                    <div class="form-group">
-                                        <label>@lang('app.designation') <a href="javascript:;" id="designation-setting" ><i class="ti-settings text-info"></i></a></label>
-                                        <select name="designation" id="designation" class="form-control">
-                                            <option value="">--</option>
-                                            @forelse($designations as $designation)
-                                                <option value="{{ $designation->id }}">{{ $designation->name }}</option>
-                                            @empty
-                                                <option value="">@lang('messages.noRecordFound')</option>
-                                            @endforelse()
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 ">
-                                    <div class="form-group">
-                                        <label>@lang('app.department') <a href="javascript:;" id="department-setting" ><i class="ti-settings text-info"></i></a></label>
-                                        <select name="department" id="department" class="form-control">
-                                            <option value="">--</option>
-                                            @foreach($teams as $team)
-                                                <option value="{{ $team->id }}">{{ $team->team_name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
+                            {{--<div class="row">--}}
+                                {{--<div class="col-md-12 ">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label>@lang('app.skills')</label>--}}
+                                        {{--<input name='tags' placeholder='@lang('app.skills')' value=''>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="row">--}}
+                                {{--<div class="col-md-6 ">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label>@lang('app.designation') <a href="javascript:;" id="designation-setting" ><i class="ti-settings text-info"></i></a></label>--}}
+                                        {{--<select name="designation" id="designation" class="form-control">--}}
+                                            {{--<option value="">--</option>--}}
+                                            {{--@forelse($designations as $designation)--}}
+                                                {{--<option value="{{ $designation->id }}">{{ $designation->name }}</option>--}}
+                                            {{--@empty--}}
+                                                {{--<option value="">@lang('messages.noRecordFound')</option>--}}
+                                            {{--@endforelse()--}}
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="col-md-6 ">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label>@lang('app.department') <a href="javascript:;" id="department-setting" ><i class="ti-settings text-info"></i></a></label>--}}
+                                        {{--<select name="department" id="department" class="form-control">--}}
+                                            {{--<option value="">--</option>--}}
+                                            {{--@foreach($teams as $team)--}}
+                                                {{--<option value="{{ $team->id }}">{{ $team->team_name }}</option>--}}
+                                            {{--@endforeach--}}
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                             <!--/row-->
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>@lang('modules.employees.hourlyRate')</label>
-                                        <input type="text" name="hourly_rate" id="hourly_rate" class="form-control">
-                                    </div>
-                                </div>
-                                <!--/span-->
-                            </div>
+                            {{--<div class="row">--}}
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label>@lang('modules.employees.hourlyRate')</label>--}}
+                                        {{--<input type="text" name="hourly_rate" id="hourly_rate" class="form-control">--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<!--/span-->--}}
+                            {{--</div>--}}
                             <!--/row-->
                             <div class="row">
                                 <div class="col-md-6 ">
@@ -201,6 +201,15 @@
                                         <select name="login" id="login" class="form-control">
                                             <option value="enable">@lang('app.enable')</option>
                                             <option value="disable">@lang('app.disable')</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <div class="form-group">
+                                        <label>@lang('app.role')</label>
+                                        <select name="role" id="role" class="form-control">
+                                            <option value="2">@lang('app.office_employee_role')</option>
+                                            <option value="4">@lang('app.designer_role')</option>
                                         </select>
                                     </div>
                                 </div>
