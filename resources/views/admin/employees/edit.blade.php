@@ -83,18 +83,18 @@
 
                             <div class="row">
 
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="control-label"><i
-                                                    class="fa fa-slack"></i> @lang('modules.employees.slackUsername')
-                                        </label>
-                                        <div class="input-group"><span class="input-group-addon">@</span>
-                                            <input type="text" id="slack_username" name="slack_username"
-                                                   class="form-control" autocomplete="nope"
-                                                   value="{{ $employeeDetail->slack_username ?? '' }}">
-                                        </div>
-                                    </div>
-                                </div>
+                                {{--<div class="col-md-3">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label class="control-label"><i--}}
+                                                    {{--class="fa fa-slack"></i> @lang('modules.employees.slackUsername')--}}
+                                        {{--</label>--}}
+                                        {{--<div class="input-group"><span class="input-group-addon">@</span>--}}
+                                            {{--<input type="text" id="slack_username" name="slack_username"--}}
+                                                   {{--class="form-control" autocomplete="nope"--}}
+                                                   {{--value="{{ $employeeDetail->slack_username ?? '' }}">--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 <!--/span-->
 
                                 <div class="col-md-3">
@@ -106,12 +106,12 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>@lang('modules.employees.lastDate')</label>
-                                        <input type="text" autocomplete="off" name="last_date" id="end_date" value="@if($employeeDetail->last_date) {{ $employeeDetail->last_date->format($global->date_format) }} @endif" class="form-control">
-                                    </div>
-                                </div>
+                                {{--<div class="col-md-3">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label>@lang('modules.employees.lastDate')</label>--}}
+                                        {{--<input type="text" autocomplete="off" name="last_date" id="end_date" value="@if($employeeDetail->last_date) {{ $employeeDetail->last_date->format($global->date_format) }} @endif" class="form-control">--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
 
                                 <div class="col-md-3">
                                     <div class="form-group">
@@ -141,23 +141,23 @@
 
                             </div>
                             <!--/span-->
-                            <div class="row">
-                                <div class="col-md-12 ">
-                                    <div class="form-group">
-                                        <label>@lang('app.skills')</label>
-                                        <input name='tags' placeholder='@lang('app.skills')' value='{{implode(',', $userDetail->skills()) }}' >
-                                    </div>
-                                </div>
-                            </div>
+                            {{--<div class="row">--}}
+                                {{--<div class="col-md-12 ">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label>@lang('app.skills')</label>--}}
+                                        {{--<input name='tags' placeholder='@lang('app.skills')' value='{{implode(',', $userDetail->skills()) }}' >--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
 
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>@lang('modules.employees.hourlyRate')</label>
-                                        <input type="text" name="hourly_rate" id="hourly_rate" class="form-control"
-                                               value="{{ $employeeDetail->hourly_rate ?? '' }}">
-                                    </div>
-                                </div>
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label>@lang('modules.employees.hourlyRate')</label>--}}
+                                        {{--<input type="text" name="hourly_rate" id="hourly_rate" class="form-control"--}}
+                                               {{--value="{{ $employeeDetail->hourly_rate ?? '' }}">--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 <!--/span-->
 
                                 <div class="col-md-6">
@@ -171,37 +171,6 @@
                                         </select>
                                     </div>
                                 </div>
-
-                            </div>
-                            <!--/row-->
-                            <div class="row">
-                                <div class="col-md-6 ">
-                                    <div class="form-group">
-                                        <label>@lang('app.designation') <a href="javascript:;" id="designation-setting" ><i class="ti-settings text-info"></i></a></label>
-                                        <select name="designation" id="designation" class="form-control">
-                                            <option value="">--</option>
-                                            @forelse($designations as $designation)
-                                                <option @if($employeeDetail->designation_id == $designation->id) selected @endif value="{{ $designation->id }}">{{ $designation->name }}</option>
-                                            @empty
-                                                <option value="">@lang('messages.noRecordFound')</option>
-                                            @endforelse()
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 ">
-                                    <div class="form-group">
-                                        <label>@lang('app.department') <a href="javascript:;" id="department-setting" ><i class="ti-settings text-info"></i></a></label>
-                                        <select name="department" id="department" class="form-control">
-                                            <option value="">--</option>
-                                            @foreach($teams as $team)
-                                                <option @if($employeeDetail->department_id == $team->id) selected @endif value="{{ $team->id }}">{{ $team->team_name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--/row-->
-                            <div class="row">
                                 <div class="col-md-6 ">
                                     <div class="form-group">
                                         <label>@lang('app.login')</label>
@@ -211,7 +180,36 @@
                                         </select>
                                     </div>
                                 </div>
+
                             </div>
+                            <!--/row-->
+                            {{--<div class="row">--}}
+                                {{--<div class="col-md-6 ">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label>@lang('app.designation') <a href="javascript:;" id="designation-setting" ><i class="ti-settings text-info"></i></a></label>--}}
+                                        {{--<select name="designation" id="designation" class="form-control">--}}
+                                            {{--<option value="">--</option>--}}
+                                            {{--@forelse($designations as $designation)--}}
+                                                {{--<option @if($employeeDetail->designation_id == $designation->id) selected @endif value="{{ $designation->id }}">{{ $designation->name }}</option>--}}
+                                            {{--@empty--}}
+                                                {{--<option value="">@lang('messages.noRecordFound')</option>--}}
+                                            {{--@endforelse()--}}
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="col-md-6 ">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label>@lang('app.department') <a href="javascript:;" id="department-setting" ><i class="ti-settings text-info"></i></a></label>--}}
+                                        {{--<select name="department" id="department" class="form-control">--}}
+                                            {{--<option value="">--</option>--}}
+                                            {{--@foreach($teams as $team)--}}
+                                                {{--<option @if($employeeDetail->department_id == $team->id) selected @endif value="{{ $team->id }}">{{ $team->team_name }}</option>--}}
+                                            {{--@endforeach--}}
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            <!--/row-->
 
                             <div class="row">
                                 <div class="col-md-6">

@@ -31,8 +31,8 @@ class UpdateRequest extends CoreRequest
             'slack_username' => 'nullable|unique:employee_details,slack_username,'.$detailID->id,
             'name'  => 'required',
             'hourly_rate' => 'nullable|numeric',
-            'department' => 'required',
-            'designation' => 'required',
+            'department' => 'nullable',
+            'designation' => 'nullable',
         ];
     }
 }
