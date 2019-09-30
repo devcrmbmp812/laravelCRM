@@ -37,7 +37,7 @@
                     </li>
                 </ul>
             </li>
-            {{--<li><a href="{{ route('admin.dashboard') }}" class="waves-effect"><i class="icon-speedometer"></i> <span class="hide-menu">@lang('app.menu.dashboard') </span></a> </li>--}}
+            <li><a href="{{ route('admin.dashboard') }}" class="waves-effect"><i class="icon-speedometer"></i> <span class="hide-menu">@lang('app.menu.dashboard') </span></a> </li>
 
             {{--@if(in_array('clients',$modules))--}}
                 {{--<li><a href="{{ route('admin.clients.index') }}" class="waves-effect"><i class="icon-people"></i> <span class="hide-menu">@lang('app.menu.clients') </span></a> </li>--}}
