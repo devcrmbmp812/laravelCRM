@@ -118,51 +118,51 @@
                             </div>
                             <!--/row-->
 
-                            <div class="row">
+                            {{--<div class="row">--}}
 
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>Skype</label>
-                                        <input type="text" name="skype" id="skype" class="form-control" value="{{ $clientDetail->skype ?? '' }}">
-                                    </div>
-                                </div>
-                                <!--/span-->
+                                {{--<div class="col-md-3">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label>Skype</label>--}}
+                                        {{--<input type="text" name="skype" id="skype" class="form-control" value="{{ $clientDetail->skype ?? '' }}">--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<!--/span-->--}}
 
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>Linkedin</label>
-                                        <input type="text" name="linkedin" id="linkedin" class="form-control" value="{{ $clientDetail->linkedin ?? '' }}">
-                                    </div>
-                                </div>
-                                <!--/span-->
+                                {{--<div class="col-md-3">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label>Linkedin</label>--}}
+                                        {{--<input type="text" name="linkedin" id="linkedin" class="form-control" value="{{ $clientDetail->linkedin ?? '' }}">--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<!--/span-->--}}
 
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>Twitter</label>
-                                        <input type="text" name="twitter" id="twitter" class="form-control" value="{{ $clientDetail->twitter ?? '' }}">
-                                    </div>
-                                </div>
-                                <!--/span-->
+                                {{--<div class="col-md-3">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label>Twitter</label>--}}
+                                        {{--<input type="text" name="twitter" id="twitter" class="form-control" value="{{ $clientDetail->twitter ?? '' }}">--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<!--/span-->--}}
 
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>Facebook</label>
-                                        <input type="text" name="facebook" id="facebook" class="form-control" value="{{ $clientDetail->facebook ?? '' }}">
-                                    </div>
-                                </div>
-                                <!--/span-->
-                            </div>
+                                {{--<div class="col-md-3">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label>Facebook</label>--}}
+                                        {{--<input type="text" name="facebook" id="facebook" class="form-control" value="{{ $clientDetail->facebook ?? '' }}">--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<!--/span-->--}}
+                            {{--</div>--}}
                             <!--/row-->
 
                             <!--row gst number-->
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="gst_number">@lang('app.gstNumber')</label>
-                                        <input type="text" id="gst_number" name="gst_number" class="form-control" value="{{ $clientDetail->gst_number ?? '' }}">
-                                    </div>
-                                </div>
-                            </div>
+                            {{--<div class="row">--}}
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label for="gst_number">@lang('app.gstNumber')</label>--}}
+                                        {{--<input type="text" id="gst_number" name="gst_number" class="form-control" value="{{ $clientDetail->gst_number ?? '' }}">--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                             <!--/row-->
 
                             <div class="row">
