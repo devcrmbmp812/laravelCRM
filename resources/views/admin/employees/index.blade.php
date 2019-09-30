@@ -31,15 +31,15 @@
 @section('content')
 
     <div class="row">
-        <div class="col-md-3">
-            <div class="white-box bg-inverse">
-                <h3 class="box-title text-white">@lang('modules.dashboard.totalEmployees')</h3>
-                <ul class="list-inline two-part">
-                    <li><i class="icon-user text-white"></i></li>
-                    <li class="text-right"><span id="totalWorkingDays" class="counter text-white">{{ $totalEmployees }}</span></li>
-                </ul>
-            </div>
-        </div>
+        {{--<div class="col-md-3">--}}
+            {{--<div class="white-box bg-inverse">--}}
+                {{--<h3 class="box-title text-white">@lang('modules.dashboard.totalEmployees')</h3>--}}
+                {{--<ul class="list-inline two-part">--}}
+                    {{--<li><i class="icon-user text-white"></i></li>--}}
+                    {{--<li class="text-right"><span id="totalWorkingDays" class="counter text-white">{{ $totalEmployees }}</span></li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
         {{--<div class="col-md-3">--}}
             {{--<div class="white-box bg-danger">--}}
