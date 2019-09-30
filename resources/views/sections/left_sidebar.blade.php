@@ -105,8 +105,8 @@
                 <li><a href="{{ route('admin.employees.index') }}" class="waves-effect"><i class="ti-user"></i> <span class="hide-menu"> @lang('app.menu.employees') <span class="fa arrow"></span> </span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="{{ route('admin.employees.index') }}">@lang('app.menu.employeeList')</a></li>
-                        <li><a href="{{ route('admin.department.index') }}">@lang('app.department')</a></li>
-                        <li><a href="{{ route('admin.designations.index') }}">@lang('app.menu.designation')</a></li>
+                        {{--<li><a href="{{ route('admin.department.index') }}">@lang('app.department')</a></li>--}}
+                        {{--<li><a href="{{ route('admin.designations.index') }}">@lang('app.menu.designation')</a></li>--}}
                     </ul>
                 </li>
             @endif
