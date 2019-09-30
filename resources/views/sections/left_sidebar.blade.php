@@ -22,11 +22,11 @@
                     </a>
                 @endif
                 <ul class="nav nav-second-level">
-                    <li>
-                        <a href="{{ route('member.dashboard') }}">
-                            <i class="fa fa-sign-in"></i> @lang('app.loginAsEmployee')
-                        </a>
-                    </li>
+                    {{--<li>--}}
+                        {{--<a href="{{ route('member.dashboard') }}">--}}
+                            {{--<i class="fa fa-sign-in"></i> @lang('app.loginAsEmployee')--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
                     <li role="separator" class="divider"></li>
                     <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"
