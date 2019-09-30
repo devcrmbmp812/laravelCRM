@@ -32,6 +32,12 @@ class RolesTableSeeder extends Seeder
         $client->description = 'Client can see own tasks and projects.'; // optional
         $client->save();
 
+        $client = new Role();
+        $client->name = 'designer';
+        $client->display_name = 'Designer'; // optional
+        $client->description = 'Designer can see tasks and projects assigned to him.'; // optional
+        $client->save();
+
 
         // Assign admin Role
         $user = User::where('email', '=', 'admin@example.com')->first();
