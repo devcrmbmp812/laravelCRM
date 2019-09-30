@@ -803,6 +803,93 @@ Route::group(['middleware' => 'auth'], function () {
 
 
     });
+    // Designer routes
+    Route::group(
+        ['namespace' => 'Designer', 'prefix' => 'designer', 'as' => 'designer.', 'middleware' => ['role:designer']], function () {
+
+        Route::resource('dashboard', 'ClientDashboardController');
+
+        Route::resource('profile', 'ClientProfileController');
+
+        // Project section
+        Route::get('projects/data', ['uses' => 'ClientProjectsController@data'])->name('projects.data');
+        Route::resource('projects', 'ClientProjectsController');
+
+        Route::group(
+            ['prefix' => 'projects'], function () {
+
+            Route::resource('project-members', 'ClientProjectMembersController');
+
+            Route::resource('tasks', 'ClientTasksController');
+
+            Route::get('files/download/{id}', ['uses' => 'ClientFilesController@download'])->name('files.download');
+            Route::get('files/thumbnail', ['uses' => 'ClientFilesController@thumbnailShow'])->name('files.thumbnail');
+            Route::resource('files', 'ClientFilesController');
+
+            Route::get('time-log/data/{id}', ['uses' => 'ClientTimeLogController@data'])->name('time-log.data');
+            Route::resource('time-log', 'ClientTimeLogController');
+
+            Route::get('project-invoice/download/{id}', ['uses' => 'ClientProjectInvoicesController@download'])->name('project-invoice.download');
+            Route::resource('project-invoice', 'ClientProjectInvoicesController');
+
+        });
+        //sticky note
+        Route::resource('sticky-note', 'ClientStickyNoteController');
+
+        // Invoice Section
+        Route::get('invoices/download/{id}', ['uses' => 'ClientInvoicesController@download'])->name('invoices.download');
+        Route::resource('invoices', 'ClientInvoicesController');
+
+        // Estimate Section
+        Route::get('estimates/download/{id}', ['uses' => 'ClientEstimateController@download'])->name('estimates.download');
+        Route::resource('estimates', 'ClientEstimateController');
+
+        //Payments section
+        Route::get('payments/data', ['uses' => 'ClientPaymentsController@data'])->name('payments.data');
+        Route::resource('payments', 'ClientPaymentsController');
+
+
+        // Issues section
+        Route::get('my-issues/data', ['uses' => 'ClientMyIssuesController@data'])->name('my-issues.data');
+        Route::resource('my-issues', 'ClientMyIssuesController');
+
+        // route for view/blade file
+        Route::get('paywithpaypal', array('as' => 'paywithpaypal','uses' => 'PaypalController@payWithPaypal',));
+
+
+        // change language
+        Route::get('language/change-language', ['uses' => 'ClientProfileController@changeLanguage'])->name('language.change-language');
+
+
+        //Tickets routes
+        Route::get('tickets/data', ['uses' => 'ClientTicketsController@data'])->name('tickets.data');
+        Route::post('tickets/close-ticket/{id}', ['uses' => 'ClientTicketsController@closeTicket'])->name('tickets.closeTicket');
+        Route::post('tickets/open-ticket/{id}', ['uses' => 'ClientTicketsController@reopenTicket'])->name('tickets.reopenTicket');
+        Route::resource('tickets', 'ClientTicketsController');
+
+        Route::resource('events', 'ClientEventController');
+
+        Route::post('gdpr/update-consent', ['uses' => 'ClientGdprController@updateConsent'])->name('gdpr.update-consent');
+        Route::get('gdpr/consent', ['uses' => 'ClientGdprController@consent'])->name('gdpr.consent');
+        Route::get('gdpr/download', ['uses' => 'ClientGdprController@downloadJSON'])->name('gdpr.download-json');
+        Route::post('gdpr/remove-request', ['uses' => 'ClientGdprController@removeRequest'])->name('gdpr.remove-request');
+        Route::get('privacy-policy', ['uses' => 'ClientGdprController@privacy'])->name('gdpr.privacy');
+        Route::get('terms-and-condition', ['uses' => 'ClientGdprController@terms'])->name('gdpr.terms');
+        Route::resource('gdpr', 'ClientGdprController');
+
+        Route::resource('leaves', 'LeaveSettingController');
+
+
+        // User message
+        Route::post('message-submit', ['as' => 'user-chat.message-submit', 'uses' => 'ClientChatController@postChatMessage']);
+        Route::get('user-search', ['as' => 'user-chat.user-search', 'uses' => 'ClientChatController@getUserSearch']);
+        Route::resource('user-chat', 'ClientChatController');
+
+        //task comments
+        Route::resource('task-comment', 'ClientTaskCommentController');
+
+
+    });
 
     // Mark all notifications as readu
     Route::post('mark-notification-read', ['uses' => 'NotificationController@markAllRead'])->name('mark-notification-read');

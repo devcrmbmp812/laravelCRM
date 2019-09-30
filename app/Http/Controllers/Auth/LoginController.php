@@ -167,5 +167,9 @@ class LoginController extends Controller
             return 'client/dashboard';
         }
 
+        if($user->hasRole('designer')){
+            return 'designer/dashboard';
+        }
+
     }
 }
