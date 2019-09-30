@@ -118,50 +118,50 @@
                                     <!--/span-->
                                 </div>
                                 <!--/row-->
-                                <div class="row">
+                                {{--<div class="row">--}}
 
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label>Skype</label>
-                                            <input type="text" name="skype" id="skype" class="form-control">
-                                        </div>
-                                    </div>
-                                    <!--/span-->
+                                    {{--<div class="col-md-3">--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label>Skype</label>--}}
+                                            {{--<input type="text" name="skype" id="skype" class="form-control">--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<!--/span-->--}}
 
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label>Linkedin</label>
-                                            <input type="text" name="linkedin" id="linkedin" class="form-control">
-                                        </div>
-                                    </div>
-                                    <!--/span-->
+                                    {{--<div class="col-md-3">--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label>Linkedin</label>--}}
+                                            {{--<input type="text" name="linkedin" id="linkedin" class="form-control">--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<!--/span-->--}}
 
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label>Twitter</label>
-                                            <input type="text" name="twitter" id="twitter" class="form-control">
-                                        </div>
-                                    </div>
-                                    <!--/span-->
+                                    {{--<div class="col-md-3">--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label>Twitter</label>--}}
+                                            {{--<input type="text" name="twitter" id="twitter" class="form-control">--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<!--/span-->--}}
 
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label>Facebook</label>
-                                            <input type="text" name="facebook" id="facebook" class="form-control">
-                                        </div>
-                                    </div>
-                                    <!--/span-->
-                                </div>
+                                    {{--<div class="col-md-3">--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label>Facebook</label>--}}
+                                            {{--<input type="text" name="facebook" id="facebook" class="form-control">--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<!--/span-->--}}
+                                {{--</div>--}}
                                 <!--/row-->
 
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="gst_number">@lang('app.gstNumber')</label>
-                                            <input type="text" id="gst_number" name="gst_number" class="form-control" value="">
-                                        </div>
-                                    </div>
-                                </div>
+                                {{--<div class="row">--}}
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label for="gst_number">@lang('app.gstNumber')</label>--}}
+                                            {{--<input type="text" id="gst_number" name="gst_number" class="form-control" value="">--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 <!--/row-->
 
                                 <div class="row">

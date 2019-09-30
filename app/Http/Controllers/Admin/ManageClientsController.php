@@ -224,8 +224,7 @@ class ManageClientsController extends AdminBaseController
                 return '<a href="'.route('admin.clients.edit', [$row->id]).'" class="btn btn-info btn-circle"
                       data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
 
-                      <a href="' . route('admin.clients.projects', [$row->id]) . '" class="btn btn-success btn-circle"
-                      data-toggle="tooltip" data-original-title="View Client Details"><i class="fa fa-search" aria-hidden="true"></i></a>
+                      
 
                       <a href="javascript:;" class="btn btn-danger btn-circle sa-params"
                       data-toggle="tooltip" data-user-id="'.$row->id.'" data-original-title="Delete"><i class="fa fa-times" aria-hidden="true"></i></a>';
