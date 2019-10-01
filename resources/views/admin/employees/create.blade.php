@@ -32,7 +32,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            {!!   $smtpSetting->set_smtp_message !!}
+            {{--{!!   $smtpSetting->set_smtp_message !!}--}}
 
             <div class="panel panel-inverse">
                 <div class="panel-heading"> @lang('modules.employees.createTitle')</div>
