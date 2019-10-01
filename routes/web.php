@@ -807,7 +807,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(
         ['namespace' => 'Designer', 'prefix' => 'designer', 'as' => 'designer.', 'middleware' => ['role:designer']], function () {
 
-        Route::resource('dashboard', 'ClientDashboardController');
+        Route::resource('dashboard', 'DesignerDashboardController');
 
         Route::resource('profile', 'ClientProfileController');
 

@@ -46,6 +46,7 @@ return array (
   'adminPanel' => 'Admin Panel',
   'employeePanel' => 'Employee Panel',
   'clientPanel' => 'Client Panel',
+  'designerPanel' => 'Designer Panel',
   'logout' => 'Logout',
   'active' => 'Active',
   'clientName' => 'Client Name',
