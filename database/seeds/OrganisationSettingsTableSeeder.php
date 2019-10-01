@@ -18,7 +18,7 @@ class OrganisationSettingsTableSeeder extends Seeder
         $currency = Currency::where('currency_code', 'USD')->first();
 
         $setting = new Setting();
-        $setting->company_name = 'Worksuite';
+        $setting->company_name = 'ClassyCRM';
         $setting->company_email = 'company@email.com';
         $setting->company_phone = '1234567891';
         $setting->address = 'Company address';

@@ -1,12 +1,12 @@
 <ul class="nav tabs-vertical">
     <li class="tab">
-        <a href="{{ route('admin.settings.index') }}" class="text-danger"><i class="ti-arrow-left"></i> @lang('app.menu.settings')</a></li>
+        <a href="" class="text-danger"><i class="ti-arrow-left"></i> @lang('app.menu.settings')</a></li>
     <li class="tab @if(\Illuminate\Support\Facades\Route::currentRouteName() == 'admin.email-settings.index') active @endif">
         <a href="{{ route('admin.email-settings.index') }}">@lang('app.menu.emailSettings')</a></li>
-    <li class="tab @if(\Illuminate\Support\Facades\Route::currentRouteName() == 'admin.slack-settings.index') active @endif">
-        <a href="{{ route('admin.slack-settings.index') }}">@lang('app.menu.slackSettings')</a></li>
-    <li class="tab @if(\Illuminate\Support\Facades\Route::currentRouteName() == 'admin.push-notification-settings.index') active @endif">
-        <a href="{{ route('admin.push-notification-settings.index') }}">@lang('app.menu.pushNotifications')</a></li>
+    {{--<li class="tab @if(\Illuminate\Support\Facades\Route::currentRouteName() == 'admin.slack-settings.index') active @endif">--}}
+        {{--<a href="{{ route('admin.slack-settings.index') }}">@lang('app.menu.slackSettings')</a></li>--}}
+    {{--<li class="tab @if(\Illuminate\Support\Facades\Route::currentRouteName() == 'admin.push-notification-settings.index') active @endif">--}}
+        {{--<a href="{{ route('admin.push-notification-settings.index') }}">@lang('app.menu.pushNotifications')</a></li>--}}
 </ul>
 
 <script src="{{ asset('plugins/bower_components/jquery/dist/jquery.min.js') }}"></script>
