@@ -45,7 +45,7 @@ class LoginController extends Controller
     public function showLoginForm()
     {
 
-        if(!$this->isLegal()){
+        if(0){
             return redirect('verify-purchase');
         }
 
