@@ -161,7 +161,7 @@ class ManageEmployeesController extends AdminBaseController
         $user->attachRole($request->input('role'));
 
         // Notify User
-        $user->notify(new NewUser($request->input('password')));
+        //$user->notify(new NewUser($request->input('password')));
 
         $this->logSearchEntry($user->id, $user->name, 'admin.employees.show');
 

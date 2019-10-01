@@ -90,7 +90,7 @@ class ManageClientsController extends AdminBaseController
 
         if ($this->emailSetting[0]->send_email == 'yes') {
             //send welcome email notification
-            $user->notify(new NewUser($request->input('password')));
+            //$user->notify(new NewUser($request->input('password')));
         }
 
         //log search
