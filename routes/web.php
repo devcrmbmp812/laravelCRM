@@ -809,7 +809,7 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::resource('dashboard', 'DesignerDashboardController');
 
-        Route::resource('profile', 'ClientProfileController');
+        Route::resource('profile', 'DesignerProfileController');
 
         // Project section
         Route::get('projects/data', ['uses' => 'ClientProjectsController@data'])->name('projects.data');

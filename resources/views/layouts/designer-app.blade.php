@@ -379,7 +379,7 @@
     </nav>
     <!-- End Top Navigation -->
     <!-- Left navbar-header -->
-@include('sections.client_left_sidebar')
+@include('sections.designer_left_sidebar')
 <!-- Left navbar-header end -->
     <!-- Page Content -->
     <div id="page-wrapper">

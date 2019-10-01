@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers\Designer;
 
-use App\GdprSetting;
-use App\LanguageSetting;
-use App\MessageSetting;
+use App\EmailNotificationSetting;
 use App\Notification;
 use App\ProjectActivity;
+use App\ProjectTimeLog;
+use App\Role;
 use App\Setting;
 use App\StickyNote;
 use App\Traits\FileSystemSettingTrait;
+use App\UniversalSearch;
 use App\UserActivity;
 use App\UserChat;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\ThemeSetting;
 use Illuminate\Support\Facades\App;
+use App\ThemeSetting;
 
 class DesignerBaseController extends Controller
 {
@@ -58,51 +58,52 @@ class DesignerBaseController extends Controller
      */
     public function __construct()
     {
-        parent::__construct();
         // Inject currently logged in user object into every view of user dashboard
+        parent::__construct();
 
         $this->companyName = $this->global->company_name;
+
+
+        App::setLocale($this->global->locale);
+        Carbon::setUtf8(true);
+        Carbon::setLocale($this->global->locale);
+        setlocale(LC_TIME,$this->global->locale.'_'.strtoupper($this->global->locale));
 
         $this->setFileSystemConfigs();
 
         $this->middleware(function ($request, $next) {
+            $this->emailSetting = email_notification_setting();
+            $this->employeeTheme = employee_theme();
 
-            $this->designerTheme = client_theme();
-            $this->languageSettings = language_setting();
-            $this->messageSetting = message_setting();
-
-            $this->user = user();
+            $this->user = auth()->user();
             $this->modules = $this->user->modules;
 
+            $userRole = $this->user->role; // Getting users all roles
+
+            if(count($userRole) > 1){ $roleId = $userRole[1]->role_id; } // if single role assign getting role ID
+            else{ $roleId = $userRole[0]->role_id; } // if multiple role assign getting role ID
+
+            // Getting role detail by ID that got above according single or multiple roles assigned.
+            $this->userRole = Role::where('id', $roleId)->first();
 
             $this->notifications = $this->user->notifications;
-            $this->unreadProjectCount = Notification::where('notifiable_id', $this->user->id)
+            $this->timer = ProjectTimeLog::memberActiveTimer($this->user->id);
+            $this->unreadMessageCount = UserChat::where('to', $this->user->id)->where('message_seen', 'no')->count();
+            $this->unreadExpenseCount = Notification::where('notifiable_id', $this->user->id)
                 ->where(function($query){
-                    $query->where('type', 'App\Notifications\TimerStarted');
-                    $query->orWhere('type', 'App\Notifications\NewProjectMember');
+                    $query->where('type', 'App\Notifications\NewExpenseStatus');
+                    $query->orWhere('type', 'App\Notifications\NewExpenseMember');
                 })
                 ->whereNull('read_at')
                 ->count();
-            $this->unreadInvoiceCount = Notification::where('notifiable_id', $this->user->id)
-                ->where('type', 'App\Notifications\NewInvoice')
-                ->whereNull('read_at')
-                ->count();
-            $this->unreadEstimateCount = Notification::where('notifiable_id', $this->user->id)
-                ->where('type', 'App\Notifications\NewEstimate')
+            $this->unreadProjectCount = Notification::where('notifiable_id', $this->user->id)
+                ->where('type', 'App\Notifications\NewProjectMember')
                 ->whereNull('read_at')
                 ->count();
             $this->stickyNotes = StickyNote::where('user_id', $this->user->id)->orderBy('updated_at', 'desc')->get();
-
-
-            $this->unreadMessageCount = $this->user->user_chat->count();
-
-            App::setLocale($this->user->locale);
-            Carbon::setLocale($this->user->locale);
-            setlocale(LC_TIME,$this->user->locale.'_'.strtoupper($this->user->locale));
-
-
             return $next($request);
         });
+
 
     }
 
@@ -118,5 +119,13 @@ class DesignerBaseController extends Controller
         $activity->user_id = $userId;
         $activity->activity = $text;
         $activity->save();
+    }
+
+    public function logSearchEntry($searchableId, $title, $route) {
+        $search = new UniversalSearch();
+        $search->searchable_id = $searchableId;
+        $search->title = $title;
+        $search->route_name = $route;
+        $search->save();
     }
 }
