@@ -140,7 +140,7 @@
     <script>
         $('#save-form').click(function () {
             $.easyAjax({
-                url: '{{route('member.profile.update', [$userDetail->id])}}',
+                url: '{{route('designer.profile.update', [$userDetail->id])}}',
                 container: '#updateProfile',
                 type: "POST",
                 redirect: true,
