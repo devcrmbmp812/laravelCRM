@@ -34,55 +34,143 @@
                     <div class="panel-body">
                         {!! Form::open(['id'=>'updateClient','class'=>'ajax-form','method'=>'PUT']) !!}
                         <div class="form-body">
-                            <h3 class="box-title">@lang('modules.client.companyDetails')</h3>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="control-label">@lang('modules.client.companyName')</label>
-                                        <input type="text" id="company_name" name="company_name" class="form-control"  value="{{ $clientDetail->company_name ?? '' }}">
+                            <div class="row col-md-12">
+                                <div class="col-md-6">
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">@lang('modules.client.companyName')</label>
+                                                <input type="text" id="company_name" name="company_name" class="form-control"  value="{{ $clientDetail->company_name ?? '' }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>@lang('modules.client.clientName')</label>
+                                                <input type="text" name="name" id="name" class="form-control" value="{{ $userDetail->name }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label class="control-label">@lang('app.address')</label>
+                                                <input type="text" name="address" id="address" value="{{ $clientDetail->address ?? '' }}"  class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>City</label>
+                                                <input type="text" name="city" id="city" class="form-control" value="{{ $clientDetail->city ?? '' }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>State</label>
+                                                <input type="text" name="state" id="state" class="form-control" value="{{ $clientDetail->state ?? '' }}">
+                                            </div>
+                                        </div>
+                                        <!--/span-->
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Zip</label>
+                                                <input type="text" name="zip" id="zip" class="form-control" value="{{ $clientDetail->zip ?? '' }}">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <!--/span-->
+                                <div class="col-md-6">
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">@lang('modules.client.phone_number')</label>
+                                                <input type="text" id="phone number" name="phone_number" value="{{ $clientDetail->phone_number ?? '' }}" class="form-control" >
+                                            </div>
+                                        </div>
+                                        <!--/span-->
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">@lang('modules.client.ext')</label>
+                                                <input type="text" id="ext" name="ext" value="{{ $clientDetail->ext ?? '' }}" class="form-control" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>@lang('modules.client.cell')</label>
+                                                <input type="tel" name="mobile" id="mobile" value="{{ $userDetail->mobile ?? '' }}" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <label>@lang('app.fax')</label>
+                                            <div class="form-group">
+                                                <input type="fax" name="fax" id="fax" value="{{ $clientDetail->fax ?? '' }}"  class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>@lang('modules.client.clientEmail')</label>
+                                                <input type="email" name="email" id="email" value="{{ $userDetail->email ?? '' }}"  class="form-control">
+                                                {{--<span class="help-block">@lang('modules.client.emailNote')</span>--}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Ref #</label>
+                                                <input type="text" name="note" id="note" class="form-control" value="{{ $clientDetail->note ?? '' }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>@lang('app.status')</label>
+                                                <select name="status" id="status" class="form-control">
+                                                    <option @if($userDetail->status == 'active') selected
+                                                            @endif value="active">@lang('app.active')</option>
+                                                    <option @if($userDetail->status == 'deactive') selected
+                                                            @endif value="deactive">@lang('app.deactive')</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{--<h3 class="box-title">@lang('modules.client.companyDetails')</h3>--}}
+
+                            {{--<div class="row">--}}
+
+                                {{--<!--/span-->--}}
                                 {{--<div class="col-md-6">--}}
                                     {{--<div class="form-group">--}}
                                         {{--<label class="control-label">@lang('modules.client.website')</label>--}}
                                         {{--<input type="text" id="website" name="website" class="form-control" value="{{ $clientDetail->website ?? '' }}" >--}}
                                     {{--</div>--}}
                                 {{--</div>--}}
-                                <!--/span-->
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="control-label">@lang('modules.client.phone_number')</label>
-                                        <input type="text" id="phone number" name="phone_number" value="{{ $clientDetail->phone_number ?? '' }}" class="form-control" >
-                                    </div>
-                                </div>
-                                <!--/span-->
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="control-label">@lang('modules.client.ext')</label>
-                                        <input type="text" id="ext" name="ext" value="{{ $clientDetail->ext ?? '' }}" class="form-control" >
-                                    </div>
-                                </div>
-                            </div>
+                                {{--<!--/span-->--}}
+
+                            {{--</div>--}}
                             <!--/row-->
 
-                            <h3 class="box-title m-t-40">@lang('modules.client.clientDetails')</h3>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-6 ">
-                                    <div class="form-group">
-                                        <label>@lang('modules.client.clientName')</label>
-                                        <input type="text" name="name" id="name" class="form-control" value="{{ $userDetail->name }}">
-                                    </div>
-                                </div>
+                            {{--<h3 class="box-title m-t-40">@lang('modules.client.clientDetails')</h3>--}}
+                            {{--<hr>--}}
+                            {{--<div class="row">--}}
 
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>@lang('modules.client.cell')</label>
-                                        <input type="tel" name="mobile" id="mobile" value="{{ $userDetail->mobile ?? '' }}" class="form-control">
-                                    </div>
-                                </div>
+
+
 
                                 {{--<div class="col-md-6">--}}
                                     {{--<div class="form-group">--}}
@@ -91,92 +179,43 @@
                                         {{--<span class="help-block">@lang('modules.client.emailNote')</span>--}}
                                     {{--</div>--}}
                                 {{--</div>--}}
-                                <!--/span-->
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-8">
-                                    <div class="form-group">
-                                        <label class="control-label">@lang('app.address')</label>
-                                        <textarea name="address"  id="address"  rows="5" value="{{ $clientDetail->address ?? '' }}" class="form-control"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-xs-4">
-                                    <label>@lang('app.fax')</label>
-                                    <div class="form-group">
-                                        <input type="fax" name="fax" id="fax" value="{{ $clientDetail->fax ?? '' }}"  class="form-control">
-                                    </div>
-                                </div>
-                                <!--/span-->
+                                {{--<!--/span-->--}}
+                            {{--</div>--}}
+                            {{--<div class="row">--}}
 
-                            </div>
-                            <div class="row">
 
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>@lang('modules.client.password')</label>
-                                        <input type="password" style="display: none">
-                                        <input type="password" name="password" id="password" class="form-control">
-                                        <span class="help-block"> @lang('modules.client.passwordUpdateNote') </span>
-                                    </div>
-                                </div>
-                                <!--/span-->
+                                {{--<!--/span-->--}}
 
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>@lang('modules.client.clientEmail')</label>
-                                        <input type="email" name="email" id="email" value="{{ $userDetail->email ?? '' }}"  class="form-control">
-                                        <span class="help-block">@lang('modules.client.emailNote')</span>
-                                    </div>
-                                </div>
-                                <!--/span-->
+                            {{--</div>--}}
+                            {{--<div class="row">--}}
 
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>@lang('app.status')</label>
-                                        <select name="status" id="status" class="form-control">
-                                            <option @if($userDetail->status == 'active') selected
-                                                    @endif value="active">@lang('app.active')</option>
-                                            <option @if($userDetail->status == 'deactive') selected
-                                                    @endif value="deactive">@lang('app.deactive')</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
+                                {{--<div class="col-md-4">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label>@lang('modules.client.password')</label>--}}
+                                        {{--<input type="password" style="display: none">--}}
+                                        {{--<input type="password" name="password" id="password" class="form-control">--}}
+                                        {{--<span class="help-block"> @lang('modules.client.passwordUpdateNote') </span>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<!--/span-->--}}
 
-                            <div class="row">
 
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>City</label>
-                                        <input type="text" name="city" id="city" class="form-control" value="{{ $clientDetail->city ?? '' }}">
-                                    </div>
-                                </div>
-                                <!--/span-->
+                                {{--<!--/span-->--}}
 
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>State</label>
-                                        <input type="text" name="state" id="state" class="form-control" value="{{ $clientDetail->state ?? '' }}">
-                                    </div>
-                                </div>
-                                <!--/span-->
 
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>Zip</label>
-                                        <input type="text" name="zip" id="zip" class="form-control" value="{{ $clientDetail->zip ?? '' }}">
-                                    </div>
-                                </div>
-                                <!--/span-->
+                            {{--</div>--}}
 
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>Ref #</label>
-                                        <textarea name="note" id="note" class="form-control" rows="5" >{{ $clientDetail->note ?? '' }}</textarea>
-                                    </div>
-                                </div>
-                                <!--/span-->
-                            </div>
+                            {{--<div class="row">--}}
+
+
+                                {{--<!--/span-->--}}
+
+
+                                {{--<!--/span-->--}}
+
+
+                                {{--<!--/span-->--}}
+                            {{--</div>--}}
                             <!--/row-->
 
                             {{--<div class="row">--}}
@@ -282,17 +321,17 @@
 
                             </div>
 
-                            <div class="row">
-                                <div class="col-md-6 ">
-                                    <div class="form-group">
-                                        <label>@lang('app.login')</label>
-                                        <select name="login" id="login" class="form-control">
-                                            <option @if($userDetail->login == 'enable') selected @endif value="enable">@lang('app.enable')</option>
-                                            <option @if($userDetail->login == 'disable') selected @endif value="disable">@lang('app.disable')</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
+                            {{--<div class="row">--}}
+                                {{--<div class="col-md-6 ">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label>@lang('app.login')</label>--}}
+                                        {{--<select name="login" id="login" class="form-control">--}}
+                                            {{--<option @if($userDetail->login == 'enable') selected @endif value="enable">@lang('app.enable')</option>--}}
+                                            {{--<option @if($userDetail->login == 'disable') selected @endif value="disable">@lang('app.disable')</option>--}}
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
 
                         </div>
                         <div class="form-actions">
