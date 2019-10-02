@@ -5,6 +5,7 @@ return array (
   'loginAsAdmin' => 'Login As Admin',
   'title' => 'Title',
   'note' => 'Note',
+  'fax' => 'Fax',
   'save' => 'Save',
   'update' => 'Update',
   'back' => 'Back',

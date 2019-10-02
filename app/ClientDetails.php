@@ -9,7 +9,7 @@ class ClientDetails extends Model
 {
     use CustomFieldsTrait;
 
-    protected $fillable = ['company_name','user_id','address','website','note','skype','facebook','twitter','linkedin','gst_number'];
+    protected $fillable = ['company_name','user_id','address','phone_number','ext','fax','city','state','zip','website','note','skype','facebook','twitter','linkedin','gst_number'];
 
     protected $table = 'client_details';
 

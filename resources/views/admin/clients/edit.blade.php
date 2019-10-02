@@ -37,31 +37,33 @@
                             <h3 class="box-title">@lang('modules.client.companyDetails')</h3>
                             <hr>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="control-label">@lang('modules.client.companyName')</label>
                                         <input type="text" id="company_name" name="company_name" class="form-control"  value="{{ $clientDetail->company_name ?? '' }}">
                                     </div>
                                 </div>
                                 <!--/span-->
-                                <div class="col-md-6">
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label class="control-label">@lang('modules.client.website')</label>--}}
+                                        {{--<input type="text" id="website" name="website" class="form-control" value="{{ $clientDetail->website ?? '' }}" >--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                <!--/span-->
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="control-label">@lang('modules.client.website')</label>
-                                        <input type="text" id="website" name="website" class="form-control" value="{{ $clientDetail->website ?? '' }}" >
+                                        <label class="control-label">@lang('modules.client.phone_number')</label>
+                                        <input type="text" id="phone number" name="phone_number" value="{{ $clientDetail->phone_number ?? '' }}" class="form-control" >
                                     </div>
                                 </div>
                                 <!--/span-->
-                            </div>
-                            <!--/row-->
-                            <div class="row">
-                                <div class="col-xs-12">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="control-label">@lang('app.address')</label>
-                                        <textarea name="address"  id="address"  rows="5" class="form-control">{{ $clientDetail->address ?? '' }}</textarea>
+                                        <label class="control-label">@lang('modules.client.ext')</label>
+                                        <input type="text" id="ext" name="ext" value="{{ $clientDetail->ext ?? '' }}" class="form-control" >
                                     </div>
                                 </div>
-                                <!--/span-->
-
                             </div>
                             <!--/row-->
 
@@ -77,12 +79,35 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>@lang('modules.client.clientEmail')</label>
-                                        <input type="email" name="email" id="email" class="form-control" value="{{ $userDetail->email }}">
-                                        <span class="help-block">@lang('modules.client.emailNote')</span>
+                                        <label>@lang('modules.client.cell')</label>
+                                        <input type="tel" name="mobile" id="mobile" value="{{ $userDetail->mobile ?? '' }}" class="form-control">
+                                    </div>
+                                </div>
+
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label>@lang('modules.client.clientEmail')</label>--}}
+                                        {{--<input type="email" name="email" id="email" class="form-control" value="{{ $userDetail->email }}">--}}
+                                        {{--<span class="help-block">@lang('modules.client.emailNote')</span>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                <!--/span-->
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-8">
+                                    <div class="form-group">
+                                        <label class="control-label">@lang('app.address')</label>
+                                        <textarea name="address"  id="address"  rows="5" value="{{ $clientDetail->address ?? '' }}" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <label>@lang('app.fax')</label>
+                                    <div class="form-group">
+                                        <input type="fax" name="fax" id="fax" value="{{ $clientDetail->fax ?? '' }}"  class="form-control">
                                     </div>
                                 </div>
                                 <!--/span-->
+
                             </div>
                             <div class="row">
 
@@ -98,8 +123,9 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>@lang('modules.client.mobile')</label>
-                                        <input type="tel" name="mobile" id="mobile" class="form-control" value="{{ $userDetail->mobile }}">
+                                        <label>@lang('modules.client.clientEmail')</label>
+                                        <input type="email" name="email" id="email" value="{{ $userDetail->email ?? '' }}"  class="form-control">
+                                        <span class="help-block">@lang('modules.client.emailNote')</span>
                                     </div>
                                 </div>
                                 <!--/span-->
@@ -115,6 +141,41 @@
                                         </select>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>City</label>
+                                        <input type="text" name="city" id="city" class="form-control" value="{{ $clientDetail->city ?? '' }}">
+                                    </div>
+                                </div>
+                                <!--/span-->
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>State</label>
+                                        <input type="text" name="state" id="state" class="form-control" value="{{ $clientDetail->state ?? '' }}">
+                                    </div>
+                                </div>
+                                <!--/span-->
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Zip</label>
+                                        <input type="text" name="zip" id="zip" class="form-control" value="{{ $clientDetail->zip ?? '' }}">
+                                    </div>
+                                </div>
+                                <!--/span-->
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Ref #</label>
+                                        <textarea name="note" id="note" class="form-control" rows="5" >{{ $clientDetail->note ?? '' }}</textarea>
+                                    </div>
+                                </div>
+                                <!--/span-->
                             </div>
                             <!--/row-->
 
@@ -221,14 +282,6 @@
 
                             </div>
 
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <label>@lang('app.note')</label>
-                                    <div class="form-group">
-                                        <textarea name="note" id="note" class="form-control" rows="5">{{ $clientDetail->note ?? '' }}</textarea>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="row">
                                 <div class="col-md-6 ">
                                     <div class="form-group">

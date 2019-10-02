@@ -40,53 +40,88 @@
                                 <h3 class="box-title">@lang('modules.client.companyDetails')</h3>
                                 <hr>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="control-label">@lang('modules.client.companyName')</label>
                                             <input type="text" id="company_name" name="company_name" value="{{ $leadDetail->company_name ?? '' }}" class="form-control" >
                                         </div>
                                     </div>
                                     <!--/span-->
-                                    <div class="col-md-6">
+                                    {{--<div class="col-md-4">--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label class="control-label">@lang('modules.client.website')</label>--}}
+                                            {{--<input type="text" id="website" name="website" value="{{ $leadDetail->website ?? '' }}" class="form-control" >--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    <div class="col-md-4">
                                         <div class="form-group">
-                                            <label class="control-label">@lang('modules.client.website')</label>
-                                            <input type="text" id="website" name="website" value="{{ $leadDetail->website ?? '' }}" class="form-control" >
+                                            <label class="control-label">@lang('modules.client.phone_number')</label>
+                                            <input type="text" id="phone number" name="phone_number" value="{{ $leadDetail->phone_number ?? '' }}" class="form-control" >
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">@lang('modules.client.ext')</label>
+                                            <input type="text" id="ext" name="ext" value="{{ $leadDetail->ext ?? '' }}" class="form-control" >
                                         </div>
                                     </div>
                                     <!--/span-->
                                 </div>
                                 <!--/row-->
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="form-group">
-                                            <label class="control-label">@lang('app.address')</label>
-                                            <textarea name="address"  id="address"  rows="5" value="{{ $leadDetail->address ?? '' }}" class="form-control"></textarea>
-                                        </div>
-                                    </div>
-                                    <!--/span-->
 
-                                </div>
-                                <!--/row-->
 
                                 <h3 class="box-title m-t-40">@lang('modules.client.clientDetails')</h3>
                                 <hr>
                                 <div class="row">
-                                    <div class="col-md-6 ">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>@lang('modules.client.clientName')</label>
                                             <input type="text" name="name" id="name"  value="{{ $leadDetail->client_name ?? '' }}"   class="form-control">
                                         </div>
                                     </div>
 
+                                    {{--<div class="col-md-4 ">--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label>@lang('modules.client.firstName')</label>--}}
+                                            {{--<input type="text" name="first_name" id="first_name"  value="{{ $leadDetail->first_name ?? '' }}"   class="form-control">--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+
+                                    {{--<div class="col-md-4">--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label>@lang('modules.client.lastName')</label>--}}
+                                            {{--<input type="text" name="last_name" id="last_name" value="{{ $leadDetail->last_name ?? '' }}"  class="form-control">--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>@lang('modules.client.clientEmail')</label>
-                                            <input type="email" name="email" id="email" value="{{ $leadDetail->client_email ?? '' }}"  class="form-control">
-                                            <span class="help-block">@lang('modules.client.emailNote')</span>
+                                            <label>@lang('modules.client.cell')</label>
+                                            <input type="tel" name="mobile" id="mobile" value="{{ $leadDetail->mobile ?? '' }}" class="form-control">
+                                        </div>
+                                    </div>
+
+
+                                    <!--/span-->
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                        <div class="form-group">
+                                            <label class="control-label">@lang('app.address')</label>
+                                            <textarea name="address"  id="address"  rows="5" value="{{ $leadDetail->address ?? '' }}" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <label>@lang('app.fax')</label>
+                                        <div class="form-group">
+                                            <input type="fax" name="fax" id="fax" value="{{ $leadDetail->fax ?? '' }}"  class="form-control">
                                         </div>
                                     </div>
                                     <!--/span-->
+
                                 </div>
+                                <!--/row-->
                                 <div class="row">
 
                                     <div class="col-md-4">
@@ -111,12 +146,51 @@
 
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>@lang('modules.client.mobile')</label>
-                                            <input type="tel" name="mobile" id="mobile" value="{{ $leadDetail->mobile ?? '' }}" class="form-control">
+                                            <label>@lang('modules.client.clientEmail')</label>
+                                            <input type="email" name="email" id="email" value="{{ $leadDetail->client_email ?? '' }}"  class="form-control">
+                                            <span class="help-block">@lang('modules.client.emailNote')</span>
+                                        </div>
+                                    </div>
+
+
+                                    <!--/span-->
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>City</label>
+                                            <input type="text" name="city" id="city" class="form-control">
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>State</label>
+                                            <input type="text" name="state" id="state" class="form-control">
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Zip</label>
+                                            <input type="text" name="zip" id="zip" class="form-control">
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Ref #</label>
+                                            <textarea name="note" id="note" class="form-control" rows="5"></textarea>
                                         </div>
                                     </div>
                                     <!--/span-->
                                 </div>
+
                                 <!--/row-->
                                 {{--<div class="row">--}}
 
@@ -221,14 +295,6 @@
                                 </div>
 
 
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <label>@lang('app.note')</label>
-                                        <div class="form-group">
-                                            <textarea name="note" id="note" class="form-control" rows="5"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="row">
                                     <div class="col-md-6 ">
                                         <div class="form-group">
