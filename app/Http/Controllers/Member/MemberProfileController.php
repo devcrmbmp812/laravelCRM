@@ -47,13 +47,13 @@ class MemberProfileController extends MemberBaseController
 
         $user->save();
 
-        $validate = Validator::make(['address' => $request->address], [
-            'address' => 'required'
-        ]);
-
-        if($validate->fails()){
-            return Reply::formErrors($validate);
-        }
+//        $validate = Validator::make(['address' => $request->address], [
+//            'address' => 'required'
+//        ]);
+//
+//        if($validate->fails()){
+//            return Reply::formErrors($validate);
+//        }
 
         $employee = EmployeeDetails::where('user_id', '=', $user->id)->first();
         if(empty($employee)){

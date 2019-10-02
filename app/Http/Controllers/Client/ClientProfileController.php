@@ -103,13 +103,13 @@ class ClientProfileController extends ClientBaseController
 
         $user->save();
 
-        $validate = Validator::make(['address' => $request->address], [
-            'address' => 'required'
-        ]);
-
-        if($validate->fails()){
-            return Reply::formErrors($validate);
-        }
+//        $validate = Validator::make(['address' => $request->address], [
+//            'address' => 'required'
+//        ]);
+//
+//        if($validate->fails()){
+//            return Reply::formErrors($validate);
+//        }
 
         $client = ClientDetails::where('user_id', '=', $user->id)->first();
         if(empty($client)){
