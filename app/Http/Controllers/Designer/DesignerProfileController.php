@@ -24,7 +24,7 @@ class DesignerProfileController extends DesignerBaseController
     public function index() {
         $this->userDetail = auth()->user();
         $this->employeeDetail = EmployeeDetails::where('user_id', '=', $this->userDetail->id)->first();
-        return view('member.profile.edit', $this->data);
+        return view('designer.profile.edit', $this->data);
     }
 
     public function update(UpdateProfile $request, $id) {
@@ -64,7 +64,7 @@ class DesignerProfileController extends DesignerBaseController
         $employee->save();
         session()->forget('user');
         $this->logUserActivity($user->id, __('messages.updatedProfile'));
-        return Reply::redirect(route('member.profile.index'), __('messages.profileUpdated'));
+        return Reply::redirect(route('designer.profile.index'), __('messages.profileUpdated'));
     }
 
     public function updateOneSignalId(Request $request){

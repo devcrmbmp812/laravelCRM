@@ -33,6 +33,9 @@ class RedirectIfAuthenticated
             elseif($user->hasRole('client')){
                 return redirect(route('client.dashboard.index'));
             }
+            elseif($user->hasRole('designer')){
+                return redirect(route('designer.dashboard.index'));
+            }
         }
 
         return $next($request);

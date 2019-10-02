@@ -613,10 +613,10 @@ class ManageEmployeesController extends AdminBaseController
         $user = User::withoutGlobalScopes(['active'])->findOrFail($userId);
 
         RoleUser::where('user_id', $user->id)->delete();
-        $user->roles()->attach($employeeRole->id);
-        if($employeeRole->id != $roleId){
-            $user->roles()->attach($roleId);
-        }
+        $user->roles()->attach($roleId);
+//        if($employeeRole->id != $roleId){
+//            $user->roles()->attach($roleId);
+//        }
 
         return Reply::success(__('messages.roleAssigned'));
     }
