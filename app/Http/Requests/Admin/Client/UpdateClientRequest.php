@@ -28,7 +28,7 @@ class UpdateClientRequest extends CoreRequest
             'email' => 'required|unique:users,email,'.$this->route('client'),
             'slack_username' => 'nullable|unique:employee_details,slack_username,'.$this->route('client'),
             'name'  => 'required',
-            'website' => 'nullable|url',
+            'website' => 'nullable',
         ];
     }
 }
