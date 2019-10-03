@@ -45,33 +45,33 @@
 @section('content')
 
     <div class="row dashboard-stats">
-        <div class="col-md-2">
-            <div class="white-box bg-inverse p-t-10 p-b-10">
-                <h3 class="box-title text-white">@lang('modules.dashboard.totalLeads')</h3>
-                <ul class="list-inline two-part">
-                    <li><i class="icon-docs text-white"></i></li>
-                    <li class="text-right"><span id="totalWorkingDays" class="counter text-white">{{ $totalLeads }}</span></li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="white-box bg-info p-t-10 p-b-10">
-                <h3 class="box-title text-white">@lang('modules.dashboard.totalConvertedClient')</h3>
-                <ul class="list-inline two-part">
-                    <li><i class="icon-user text-white"></i></li>
-                    <li class="text-right"><span class="counter text-white">{{ $totalClientConverted }}</span></li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="white-box bg-warning p-t-10 p-b-10">
-                <h3 class="box-title text-white">@lang('modules.dashboard.totalPendingFollowUps')</h3>
-                <ul class="list-inline two-part">
-                    <li><i class="icon-calender text-white"></i></li>
-                    <li class="text-right"><span class="counter text-white">{{ $pendingLeadFollowUps }}</span></li>
-                </ul>
-            </div>
-        </div>
+        {{--<div class="col-md-2">--}}
+            {{--<div class="white-box bg-inverse p-t-10 p-b-10">--}}
+                {{--<h3 class="box-title text-white">@lang('modules.dashboard.totalLeads')</h3>--}}
+                {{--<ul class="list-inline two-part">--}}
+                    {{--<li><i class="icon-docs text-white"></i></li>--}}
+                    {{--<li class="text-right"><span id="totalWorkingDays" class="counter text-white">{{ $totalLeads }}</span></li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="col-md-2">--}}
+            {{--<div class="white-box bg-info p-t-10 p-b-10">--}}
+                {{--<h3 class="box-title text-white">@lang('modules.dashboard.totalConvertedClient')</h3>--}}
+                {{--<ul class="list-inline two-part">--}}
+                    {{--<li><i class="icon-user text-white"></i></li>--}}
+                    {{--<li class="text-right"><span class="counter text-white">{{ $totalClientConverted }}</span></li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="col-md-2">--}}
+            {{--<div class="white-box bg-warning p-t-10 p-b-10">--}}
+                {{--<h3 class="box-title text-white">@lang('modules.dashboard.totalPendingFollowUps')</h3>--}}
+                {{--<ul class="list-inline two-part">--}}
+                    {{--<li><i class="icon-calender text-white"></i></li>--}}
+                    {{--<li class="text-right"><span class="counter text-white">{{ $pendingLeadFollowUps }}</span></li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
         <div class="col-md-12">
             <div class="white-box">
@@ -79,15 +79,15 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <a href="{{ route('admin.leads.create') }}" class="btn btn-outline btn-success btn-sm">@lang('modules.lead.addNewLead') <i class="fa fa-plus" aria-hidden="true"></i></a>
-                            <a href="javascript:;" id="toggle-filter" class="btn btn-outline btn-danger btn-sm toggle-filter"><i
-                                        class="fa fa-sliders"></i> @lang('app.filterResults')</a>
+                            {{--<a href="javascript:;" id="toggle-filter" class="btn btn-outline btn-danger btn-sm toggle-filter"><i--}}
+                                        {{--class="fa fa-sliders"></i> @lang('app.filterResults')</a>--}}
                         </div>
                     </div>
-                    <div class="col-sm-6 text-right hidden-xs">
-                        <div class="form-group">
-                            <a href="javascript:;" onclick="exportData()" class="btn btn-info btn-sm"><i class="ti-export" aria-hidden="true"></i> @lang('app.exportExcel')</a>
-                        </div>
-                    </div>
+                    {{--<div class="col-sm-6 text-right hidden-xs">--}}
+                        {{--<div class="form-group">--}}
+                            {{--<a href="javascript:;" onclick="exportData()" class="btn btn-info btn-sm"><i class="ti-export" aria-hidden="true"></i> @lang('app.exportExcel')</a>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                 </div>
                 <div class="row b-b b-t" style="display: none; background: #fbfbfb;" id="ticket-filters">
                     <div class="col-md-12">

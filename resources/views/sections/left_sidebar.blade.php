@@ -111,6 +111,19 @@
                     </ul>
                 </li>
             @endif
+            @if(in_array('leads',$modules))
+                <li><a href="{{ route('admin.leads.index') }}" class="waves-effect"><i class="ti-receipt"></i> <span class="hide-menu"> @lang('app.menu.lead')</span></a>
+                </li>
+            @endif
+            @if(in_array('tasks',$modules))
+                <li><a href="{{ route('admin.task.index') }}" class="waves-effect"><i class="ti-layout-list-thumb"></i> <span class="hide-menu"> @lang('app.menu.tasks') </span></a>
+                    {{--<ul class="nav nav-second-level">--}}
+                        {{--<li><a href="{{ route('admin.all-tasks.index') }}">@lang('app.menu.tasks')</a></li>--}}
+                        {{--<li class="hidden-sm hidden-xs"><a href="{{ route('admin.taskboard.index') }}">@lang('modules.tasks.taskBoard')</a></li>--}}
+                        {{--<li><a href="{{ route('admin.task-calendar.index') }}">@lang('app.menu.taskCalendar')</a></li>--}}
+                    {{--</ul>--}}
+                </li>
+            @endif
 
 
             {{--@if(in_array('attendance',$modules))--}}
